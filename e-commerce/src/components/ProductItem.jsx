@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
+import { NotificationContext } from '../App';
+import { useContext } from 'react';
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
+  const showNotification = useContext(NotificationContext);
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    showNotification(product)
   };
 
   return (

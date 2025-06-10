@@ -4,16 +4,22 @@ import { useEffect } from "react";
 import useFetchProducts from "../hooks/useFetchProducts";
 import { addToCart } from "../redux/cartSlice";
 import { Link } from "react-router-dom"; 
+import { NotificationContext } from '../App';
+import { useContext } from 'react';
 
 const ProductDetail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const showNotification = useContext(NotificationContext);
+
+  
 
     const { data: product, loading, error } = useFetchProducts(id);
 
     const handleAddToCart = () => {
         dispatch(addToCart(product));
+        showNotification(product)
     };
 
     useEffect(() => {

@@ -11,9 +11,6 @@
 }
 
 
-
-
-
 @layer components {
   .nav-link {
     @apply px-3 py-1 rounded transition hover:bg-[var(--accent-color)];
@@ -28,4 +25,19 @@
     @apply bg-white p-4 rounded-lg shadow-md;
   }
 
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
 }
