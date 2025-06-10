@@ -11,7 +11,7 @@ const Cart = () => {
     const navigate = useNavigate()
 
     const handleProceedToPayment = () => {
-        navigate("/payment");
+        navigate("/checkout");
     }
 
 
