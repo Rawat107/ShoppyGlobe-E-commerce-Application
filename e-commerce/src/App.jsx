@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
-import { useCallback, useState, useRef } from 'react'
+import { useCallback, useState, useRef, createContext } from 'react'
 import CartNotification from './components/CartNotification'
 
-import { createContext } from 'react'
+
 export const NotificationContext = createContext();
 
 function App() {

@@ -32,25 +32,27 @@ const CartItem = ({ item }) => {
                 </div>
             </div>
 
-            <div className='flex items-centet gap-2'>
-                <button
-                    onClick={handleDecrease}
-                    className='px-2 py-1 bg-[var(--primary-color)] text-white rounded cursor-pointer'
-                >
-                    -
-                </button>
-                <span className='font-semibold text-[var(--text-color)]'>
-                    {item.quantity}
-                </span>
-                <button
-                    onClick={handleIncrease}
-                    className='px-2 py-1 bg-[var(--primary-color)] text-white rounded cursor-pointer'
-                >
-                    +
-                </button>
+            <div className='flex flex-col md:flex-row items-center justify-between gap-2'>
+                <div className='flex items-center gap-2 justify-between'>
+                    <button
+                        onClick={handleDecrease}
+                        className='px-2 py-1 bg-[var(--primary-color)] text-white rounded cursor-pointer'
+                    >
+                        -
+                    </button>
+                    <span className='font-semibold text-[var(--text-color)]'>
+                        {item.quantity}
+                    </span>
+                    <button
+                        onClick={handleIncrease}
+                        className='px-2 py-1 bg-[var(--primary-color)] text-white rounded cursor-pointer'
+                    >
+                        +
+                    </button>
+                </div>
                 <button 
                     onClick={() => dispatch(removeFromCart(item.id))}
-                    className='ml-4 px-2 py-1 bg-[var(--error-color)] text-white rounded cursor-pointer'
+                    className='md:ml-4 px-2 py-1 bg-[var(--error-color)] text-white rounded cursor-pointer'
                 >
                     Remove
                 </button>
