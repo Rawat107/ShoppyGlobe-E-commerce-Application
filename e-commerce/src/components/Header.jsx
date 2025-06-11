@@ -12,9 +12,18 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src="/Logo.png" alt="Logo" className="w-10 h-10 object-contain" />
-          <NavLink to="/" className="text-2xl font-bold cursor-pointer">
-            ShoppyGlobe
+          <NavLink
+            to="/"
+            className="text-2xl font-extrabold tracking-wide leading-tight cursor-pointer "
+          >
+            <span className="font-black text-white drop-shadow-[1px_1px_2px_rgba(0,0,0,0.7)]">
+              Shoppy
+            </span>
+            <span className="ml-1 italic text-blue-300 drop-shadow-[1px_1px_2px_rgba(0,0,0,0.7)]">
+              Globe
+            </span>
           </NavLink>
+
         </div>
 
         {/* Navigation */}
