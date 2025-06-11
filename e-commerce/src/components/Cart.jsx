@@ -3,13 +3,16 @@ import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+    // Get all items from the Redux cart state
     const CartItems = useSelector((state) => state.cart)
 
+    // Calculate the total price of all items
     const total = CartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
 
 
     const navigate = useNavigate()
 
+    // Navigate to checkout page
     const handleProceedToPayment = () => {
         navigate("/checkout");
     }

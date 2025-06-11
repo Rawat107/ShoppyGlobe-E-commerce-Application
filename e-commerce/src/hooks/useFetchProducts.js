@@ -1,4 +1,3 @@
-// src/hooks/useFetchProducts.js
 import { useEffect, useState } from "react";
 
 const useFetchProducts = (id = null) => {
@@ -7,6 +6,8 @@ const useFetchProducts = (id = null) => {
 
   useEffect(() => {
     const controller = new AbortController();
+
+     // Determine API URL based on whether an ID is provided
     const url = id 
       ? `https://dummyjson.com/products/${id}`
       : `https://dummyjson.com/products`;
@@ -17,6 +18,8 @@ const useFetchProducts = (id = null) => {
         if (!response.ok) throw new Error('Failed to fetch products');
         
         const result = await response.json();
+
+        // If fetching one item, set data to the object, otherwise to the 'products' array
         setData(id ? result : result.products);
       } catch (err) {
         if (err.name !== 'AbortError') {
@@ -27,7 +30,7 @@ const useFetchProducts = (id = null) => {
     };
 
     fetchData();
-
+    // Cleanup on unmount or id change to cancel request
     return () => controller.abort();
   }, [id]);
 

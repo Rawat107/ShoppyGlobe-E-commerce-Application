@@ -3,6 +3,7 @@ import { AlertTriangle } from "lucide-react";
 
 const NotFound = () => {
   return (
+    // fallback page for invalid routes
     <div className="flex flex-col items-center justify-center h-[70vh] text-center p-4">
       <AlertTriangle className="w-16 h-16 text-[var(--error-color)] mb-4" />
       <h1 className="text-3xl font-bold text-[var(--text-color)] mb-2">

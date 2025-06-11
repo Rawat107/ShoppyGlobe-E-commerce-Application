@@ -9,6 +9,7 @@ const PaymentPage = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    // wait before confirmation
     useEffect(() => {
         const processingTimer = setTimeout(() => {
             setConfirmed(true)
@@ -19,6 +20,7 @@ const PaymentPage = () => {
         return () => clearTimeout(processingTimer);
     }, [dispatch]);
 
+    // wait before redirect to home
     useEffect(() => {
         if(confirmed) {
             const redirectTimer = setTimeout(() => {

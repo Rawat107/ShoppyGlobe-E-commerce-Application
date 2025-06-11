@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const ProductList = () => {
     const dispatch = useDispatch();
-    const { data: products = [], loading, error } = useFetchProducts();
+    const { data: products = [], error } = useFetchProducts();
     const searchQuery = useSelector((state) => state.search.query || '');
     
     // Memoize or optimize filtering for larger lists
@@ -15,6 +15,7 @@ const ProductList = () => {
         product.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    //  Clear search on unmount
     useEffect(() => {
         return () => dispatch(setSearchQuery(""));
     }, [dispatch]);
@@ -29,8 +30,6 @@ const ProductList = () => {
                 className="w-full p-2 mb-4 border rounded text-[var(--text-color)] bg-white placeholder:text-[var(--subtext-color)]"
                 aria-label="Search products"
             />
-
-            {loading && <p className="text-[var(--text-color)] text-center py-8">Loading products...</p>}
             
             {error && (
                 <p className="text-[var(--error-color)] text-center py-8">
@@ -38,7 +37,7 @@ const ProductList = () => {
                 </p>
             )}
 
-            {!loading && !error && (
+            {!error && (
                 <>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {filteredProducts.map((product) => (

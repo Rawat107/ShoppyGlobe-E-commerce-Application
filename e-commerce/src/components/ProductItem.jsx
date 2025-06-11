@@ -8,6 +8,7 @@ const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
   const showNotification = useContext(NotificationContext);
 
+  // add product to cart and show notifation 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
     showNotification(product)

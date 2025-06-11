@@ -3,6 +3,8 @@ import { updateQuantity, removeFromCart } from '../redux/cartSlice';
 
 
 const CartItem = ({ item }) => {
+    
+    // Dispatch Redux actions to update quantity or remove item
     const dispatch = useDispatch()
 
     const handleDecrease = () => {
