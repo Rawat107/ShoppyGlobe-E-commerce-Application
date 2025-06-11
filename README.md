@@ -4,6 +4,12 @@
 
 ---
 
+### Live Demo
+
+**[View Live on Render](https://shoppyglobe-rtey.onrender.com/)**
+
+---
+
 ## Features
 
 - Product listing with search functionality
@@ -58,7 +64,7 @@ The app will be available at [http://localhost:5173](http://localhost:5173) or p
 ## Notes
 
 - Lazy loading is implemented using `React.lazy` and `Suspense` in `main.jsx`.
-- All routes are defined using `createBrowserRouter` and wrapped in `<Suspense fallback={<div>Loading...</div>}>`.
+- All routes are defined using `createBrowserRouter` and wrapped in `<Suspense fallback=loader}>`.
 - Error handling gracefully redirects to `/not-found` if a product fetch fails.
 - Search feature in `ProductList` filters products by name or description.
 - Responsive design tested on different screen sizes.
