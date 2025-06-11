@@ -15,7 +15,7 @@ const ProductDetail = () => {
 
   
 
-    const { data: product, loading, error } = useFetchProducts(id);
+    const { data: product, error } = useFetchProducts(id);
 
     const handleAddToCart = () => {
         dispatch(addToCart(product));
@@ -28,7 +28,7 @@ const ProductDetail = () => {
         }
     }, [error, navigate]);
 
-    if (loading) return <p className="p-4">Loading....</p>;
+    
     if(!product) return null;
 
     return (

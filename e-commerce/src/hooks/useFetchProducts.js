@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const useFetchProducts = (id = null) => {
   const [data, setData] = useState(id ? null : []);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -23,11 +22,8 @@ const useFetchProducts = (id = null) => {
         if (err.name !== 'AbortError') {
           setError(err.message || 'Failed to fetch products');
         }
-      } finally {
-        if (!controller.signal.aborted) {
-          setLoading(false);
-        }
-      }
+      } 
+      
     };
 
     fetchData();
@@ -35,7 +31,7 @@ const useFetchProducts = (id = null) => {
     return () => controller.abort();
   }, [id]);
 
-  return { data, error, loading };
+  return { data, error };
 };
 
 export default useFetchProducts;

@@ -1,6 +1,6 @@
 import { StrictMode, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import './index.css';
@@ -32,7 +32,8 @@ const router = createBrowserRouter([
       { path: 'product/:id', element: <ProductDetail /> },
       { path: 'cart', element: <Cart /> },
       { path: 'checkout', element: <Checkout /> },
-      { path: '*', element: <NotFound /> }, 
+      { path: '/not-found', element: <NotFound /> },
+      { path: '*', element: <Navigate to="/not-found" replace /> } 
     ],
   },
 ]);
