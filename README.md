@@ -4,6 +4,12 @@
 
 ---
 
+### Live Demo
+
+**[View Live on Render](https://shoppyglobe-rtey.onrender.com/)**
+
+---
+
 ## Features
 
 - Product listing with search functionality
