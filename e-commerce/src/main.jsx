@@ -10,9 +10,10 @@ import store from './redux/store.js';
 const App = lazy(() => import('./App.jsx'));
 const ProductDetail = lazy(() => import('./components/ProductDetail.jsx'));
 const Cart = lazy(() => import('./components/Cart.jsx'));
+const NotFound = lazy(() => import('./components/NotFound.jsx'));
 const ProductList = lazy(() => import('./components/ProductList.jsx'));
 const Checkout = lazy(() => import('./components/Checkout.jsx'));
-import NotFound from './components/NotFound.jsx';
+
 // Fallback loader
 const Loader = () => (
   <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--background-color)] text-[var(--text-color)]">
