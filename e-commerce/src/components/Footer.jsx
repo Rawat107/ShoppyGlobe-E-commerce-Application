@@ -1,4 +1,5 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
+// deprecated but useful
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -18,7 +19,7 @@ const Footer = () => {
             aria-label="GitHub"
             className="hover:text-blue-300 transition"
           >
-            <Github size={20} />
+            <FaGithub size={20} />
           </a>
           <a 
             href="https://linkedin.com/in/vr107" 
@@ -27,7 +28,7 @@ const Footer = () => {
             aria-label="LinkedIn"
             className="hover:text-blue-300 transition"
           >
-            <Linkedin size={20} />
+            <FaLinkedin size={20} />
           </a>
           <a 
             href="https://twitter.com/vaibhavrawat495" 
@@ -36,7 +37,7 @@ const Footer = () => {
             aria-label="Twitter"
             className="hover:text-blue-300 transition"
           >
-            <Twitter size={20} />
+            <FaTwitter size={20} />
           </a>
         </div>
       </div>
